@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="UTF-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1"/>
+    <title>MyMacys.net Whiteboard</title>
+    <link rel="stylesheet" href="https://spoprod-a.akamaihd.net/files/fabric/office-ui-fabric-core/4.1.0/css/fabric.min.css"/>
+    <link rel="stylesheet" href="./bundle.css"/>
+    <style>
+
+    </style>
+  </head>
+  <body>
+    <section id="wbcontrols">
+      <nav>
+        <ul class="primary">
+          <li id="edit" title="Draw"><i class="ms-Icon ms-Icon--Edit" aria-hidden="true"></i></li-->
+          <li class="empty" title="Select Color"><input type="color" id="color"/></li>
+          <li id="size" class="empty" title="Cursor Size"><input type="range" value="10" min="5" max="50" step="1" id="range"/></li>
+          <li class="empty">&nbsp;</li>
+          <!--li id="erasedraw" title="Erase"><i class="ms-Icon ms-Icon--EraseTool" aria-hidden="true"></i></li-->
+          <!--li id="point" title="Point"><i class="ms-Icon ms-Icon--TouchPointer" aria-hidden="true"></i></li-->
+          <li id="addText" title="Add Text"><i class="ms-Icon ms-Icon--TextField" aria-hidden="true"></i></li>
+          <li id="addImage" title="Add Image From URL"><i class="ms-Icon ms-Icon--Photo2Add" aria-hidden="true"></i></li-->
+          <li class="empty">&nbsp;</li>
+          <!--li id="undo" title="Undo"><i class="ms-Icon ms-Icon--Undo" aria-hidden="true"></i></li-->
+          <li class="empty">&nbsp;</li>
+          <li id="save" title="Save Whiteboard"><i class="ms-Icon ms-Icon--Save" aria-hidden="true"></i></li>
+          <!--li id="saveDraft" title="Save Draft"><i class="ms-Icon ms-Icon--SaveAs" aria-hidden="true"></i></li-->
+          <li id="erase" title="Erase Whiteboard"><i class="ms-Icon ms-Icon--Clear" aria-hidden="true"></i></li>
+        </ul>
+        <ul style="float:right">
+          <!--li><i class="ms-Icon ms-Icon--Contact" aria-hidden="true"></i></li-->
+          <!--li><i class="ms-Icon ms-Icon--Group" aria-hidden="true"></i></li-->
+        </ul>
+      </nav>
+    </section>
+    <section id="whiteboard"><canvas id="canvas"/></section>
+    <section id="chat">
+      <ul id="messages"></ul>
+      <a id="wb"></a>
+    </section>
+    <section class="send-message">
+      <input placeholder="Send a message" id="msg" autocomplete="off" /><button id="send">Send</button>
+    </section>
+
+
+      <div id="submenus">
+        <div id="edit-area">
+          <div id="shapes-area">
+            <ul class="primary">
+              <li id="drawRect" class="selected" title="Draw Square"><i class="ms-Icon ms-Icon--Checkbox" aria-hidden="true"></i></li>
+              <li id="drawCircle" title="Draw Circle"><i class="ms-Icon ms-Icon--LocationCircle" aria-hidden="true"></i></li>
+            </ul>
+          </div>
+          <div id="size-area">
+            <label for="aspect"<input id="aspect" type="checkbox" value=true> Preserver Aspect ratio</label>
+            <input id="size-width" type="range" min="2" max="50" value="10"/>
+            <input id="size-height" type="range" min="2" max="50" value="10"/>
+            <div id="size-show">
+              <div id="size-show-shape"></div>
+            </div>
+
+          </div>
+        </div>
+      </div>
+
+    <script src="/socket.io/socket.io.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fabric.js/1.7.1/fabric.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/spectrum/1.8.0/spectrum.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/FileSaver.js/1.3.3/FileSaver.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/javascript-canvas-to-blob/3.6.0/js/canvas-to-blob.min.js"></script>
+    <script src="./wb.js"></script>
+  </body>
+</html>

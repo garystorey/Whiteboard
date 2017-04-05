@@ -1,0 +1,22 @@
+{
+    "extends" : "eslint:recommended",
+    "rules": {
+        "no-undef": 0,
+        "no-console": 0
+    },
+
+    "parserOptions": {
+        "ecmaVersion": 6,
+        "sourceType": "module"
+    },
+    "globals":{
+        "jQuery": false,
+        "$": true,
+        "window": true,
+        "document": true,
+        "setup": true,
+        "mouseReleased": true,
+        "mouseDragged" : true
+    },
+    "envs": ["browser"]
+}
